@@ -1,0 +1,411 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+    \vspace{-2pt}\item
+        \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{#1} & #2 \\
+            \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeEducationHeading}[6]{
+    \vspace{-2pt}\item
+        \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{#1} & #2 \\
+            \textit{\small#3} & \textit{\small #4} \\
+            \textit{\small#5} & \textit{\small #6}
+        \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeCertificateHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1}\\
+      \textit{\small#3} & \textit{\small #2} 
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{center}
+    \textbf{\Huge \scshape Ishaan Goel} \\ \vspace{3pt}
+    \small
+    \faMobile \hspace{.5pt} \href{tel:17712017576}{+1 771 201 7576}
+    $|$
+    \faAt \hspace{.5pt} \href{mailto:igoeldxb@gmail.com}{igoeldxb@gmail.com}
+    $|$
+    \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/igoeldc}{igoeldc}
+    $|$
+    % \faGithub \hspace{.5pt} \href{https://github.com/arasgungore}{GitHub}
+    % $|$
+    % \faGlobe \hspace{.5pt} \href{https://arasgungore.github.io}{Portfolio}
+    % $|$
+    \faMapMarker \hspace{.5pt} \href{https://www.google.com/maps/place/Illinois+Institute+of+Technology/@41.8348771,-87.6291946,17z/data=!3m1!4b1!4m5!3m4!1s0x880e2c72d3e9a80f:0x91cbe4661afb6f1a!8m2!3d41.8348731!4d-87.6270059}{Chicago, Illinois, United States}
+\end{center}
+
+\vspace{-20pt}
+
+\section{Summary}
+  \resumeSubHeadingListStart
+    \item{Applied Mathematics and Artificial Intelligence Dual Degree freshman student. Multicultural and multilingual. Keen interest in Generative and Applied AI. Seeking Computer Science internship to support business practitioners in research and application development to expand company growth.}
+    \vspace{-5pt}
+    \item{\textbf{Interests:} Mathematics, AI, Linguistics/Languages, World Cultures, Electronic Music Composition}
+    \vspace{-5pt}
+    \item{\textbf{Lived In:} Washington, D.C.; Hong Kong S.A.R.; Dubai, U.A.E.}
+  \resumeSubHeadingListEnd
+
+\vspace{-10pt}
+
+%----------- EDUCATION -----------
+
+\section{Education}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    
+    \resumeEducationHeading
+      {Illinois Institute of Technology}{Chicago, Illinois}
+      {B.S. Applied Mathematics; \textbf{GPA: 3.50/4.00}}{Aug 2022 \textbf{--} May 2026 (Expected)}
+      {B.S. Artificial Intelligence; \textbf{GPA: 4.00/4.00}}{Aug 2022 \textbf{--} May 2026 (Expected)}
+      % \resumeItemListStart
+      %       \resumeItem{\textbf{Semester 1:} Object Oriented Programming I, Multivariate and Vector Calculus, Intro to Profession (Mathematics), Intro to Science and Technology Studies, Intro to Business}
+      %       \resumeItem{\textbf{Semester 2:} Accelerated Introduction to Computer Science, Intro to Math Modeling, Intro to Discrete Math, Elementary Linear Algebra, ODEs and Dynamical Systems, Principles of Economics}
+      %       \resumeItem{\textbf{Semester 3:} Real Analysis, Applied Algebra, Combinatorics, Probability, Data Structures and Algorithms, Language Theory in NLP}
+      %   \resumeItemListEnd
+    
+    \resumeEducationHeading
+      {Dubai American Academy}{Dubai, United Arab Emirates}
+      {International Baccalaureate Diploma}{Sep 2020 \textbf{--} Jun 2022}
+      {}{}
+      \vspace{-20pt}
+      \resumeItemListStart
+            % \resumeItem{\textbf{Extended Essay:} Can Natural Language Processing be used to preserve minority, regional and oppressed languages given the lack of data?}
+            \resumeItem{\textbf{Higher Level:} Math Analysis \& Approaches, Information Technology in a Global Society, Physics}
+            \resumeItem{\textbf{Standard Level:} Music, Spanish B, English Language \& Literature}
+        \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+
+\vspace{-10pt}
+
+
+
+%----------- RELEVANT COURSEWORK -----------
+
+\section{Coursework}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{Semester 1:}{ Multivariate and Vector Calculus, Introduction to Profession (Mathematics),\\Object Oriented Programming I, Introduction to Science and Technology Studies, Introduction to Business}
+        
+        \textbf{Semester 2:}{ Introduction to Mathematical Modeling, Introduction to Discrete Math, Elementary Linear Algebra, Ordinary Differential Equations and Dynamical Systems, Accelerated Introduction to Computer Science,\\Principles of Economics}
+
+        \textbf{Semester 3:}{ Real Analysis, Applied Algebra, Combinatorics, Probability, Data Structures and Algorithms,\\Language Theory in Natural Language Processing}
+
+        \textbf{Semester 4 (\textit{tentative}):}{ Introduction to Computational Mathematics, Introduction to Stochastic Processes,\\Partial Differential Equations, Introduction to Algorithms, Artificial Intelligence Language Understanding,\\Introduction to Quantum Computing}
+    }}
+  \resumeSubHeadingListEnd
+
+%----------- SKILLS -----------
+
+\section{Skills}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{Programming \& Software:}{ Python, R, Julia, Java, \LaTeX, RegEx; Photoshop, Illustrator} \\ \vspace{3pt}
+        
+        \textbf{Languages/Cultures:}{ \textit{Fluent:} English, Hindi-Urdu, Mandarin Chinese; \textit{Intermediate}: Spanish, Arabic}
+        
+        % \textbf{Frameworks}{: X, X, X} \\
+        % \textbf{Developer Tools}{: X, X, X} \\
+        % \textbf{Libraries}{: X, X, X} \\
+        % \textbf{Applications}{: X, X, X}
+    }}
+  \resumeSubHeadingListEnd
+
+% \vspace{-14pt}
+
+%----------- WORK EXPERIENCE -----------
+
+% \section{Work Experience}
+%   \vspace{3pt}
+%   \resumeSubHeadingListStart
+    
+%     \resumeSubheading
+%       {Applied Mathematics Department}{Chicago, Illinois}
+%       {Student Assistant to Department Coordinator}{Jan 2023 \textbf{--} Present}
+%         \resumeItemListStart
+%             \resumeItem{Planned admitted student event; Collated past course registration information into a new, updated format; Library reorganization; Helped coordinate and setup redesign of bulletin boards; Setup and troubleshot technological interfaces to increase department productivity}
+%             % Utilized technical expertise to configure and install essential hardware and software components, ensuring seamless integration with existing systems and maximizing operational efficiency (set up printer)
+            
+%         \resumeItemListEnd
+    
+%   \resumeSubHeadingListEnd
+
+% \vspace{-15pt}
+% \vspace{-14pt}
+
+%----------- CERTIFICATES -----------
+
+\section{Certificates}
+    \resumeSubHeadingListStart
+
+        \resumeCertificateHeading
+            {DataCamp\vspace{5pt}}
+            {Sep 2023}{Data Manipulation in Julia}
+
+        \resumeCertificateHeading
+            {\vspace{-15pt}}{Sep 2023}{Intermediate Julia}
+        
+        \resumeCertificateHeading
+            {\vspace{-25pt}}{Sep 2023}{Introduction to Data Visualization with Julia}
+        
+        \resumeCertificateHeading
+            {\vspace{-35pt}}{Sep 2023}{Introduction to Julia}{\vspace{-50pt}}
+    
+        \resumeCertificateHeading
+            {Codecademy\vspace{5pt}}
+            {May 2023}{Analyze Data with R Skill Path}
+        
+        \resumeCertificateHeading
+            {\vspace{-15pt}}{May 2023}{Learn Java Course}
+        % \resumeCertificateHeading
+        %     {\vspace{-25pt}}{Jul 2022}{Apply Natural Language Processing with Python Skill Path}
+        
+        \resumeCertificateHeading
+            {\vspace{-25pt}}{Apr 2018}{Responsive Design}
+    
+    \resumeSubHeadingListEnd
+
+\vspace{-15pt}
+
+%----------- ORGANIZATIONS -----------
+
+\section{Organizations}
+  \resumeSubHeadingListStart
+      
+    \resumeOrganizationHeading
+        {Machine Learning at Illinois Institute of Technology (ML@IIT)}{Aug 2022 \textbf{--} Present}{President}
+        
+        \resumeItemListStart
+            \resumeItem{Network with and learn from the practitioners about the ongoing research in and application of Mathematics and
+            CS to engineering, industry, science, and society in solving real-world challenges.}
+        \resumeItemListEnd
+    
+    \resumeOrganizationHeading
+        {Society of Industrial and Applied Mathematics (SIAM) IIT Chapter}{Aug 2022
+        \textbf{--} Present}{Vice President}
+        
+        \resumeItemListStart
+            \resumeItem{Network with and learn from the practitioners about the ongoing research in and application of Mathematics and
+            CS to engineering, industry, science, and society in solving real-world challenges.}
+        \resumeItemListEnd
+    
+    \resumeOrganizationHeading
+        {AI Impact Club at Dubai American Academy}{Jan 2020 \textbf{--} Jun 2022}{Founder \& President}
+        % \resumeItemListStart
+        %     \resumeItem{\hspace{20pt}Invited tech-industry leaders to share the social-ethical and technological challenges they face in the application of AI.}
+        %     \resumeItem{\vspace{-20pt}}
+        % \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+
+% \vspace{-14pt}
+
+%----------- PROJECTS -----------
+
+\section{Projects}
+    \vspace{3pt}
+    \resumeSubHeadingListStart
+      
+        \resumeProjectHeading
+            {\textbf{\href{https://github.com/X1Atomic/CollabNetwork}{Erd\H{o}s Co-authorship Network}}}{\textit{Feb 2023 \textbf{--} May 2023} }
+              \resumeItemListStart
+                \resumeItem{Developed a co-author network, influence measures and an algorithm to study a research paper’s influence on contemporary and future research.}
+                 \resumeItem{\textbf{Project Objectives:} learn about Network Science - How to: \textbf{i)} Measure influence in a given network and \textbf{ii)} Identify and Extract relevant network influence data.}
+              \resumeItemListEnd
+       
+        \resumeProjectHeading
+            {\textbf{IB Extended Essay -- ITGS}}{\textit{Mar 2021 \textbf{--} Jan 2022} }
+              \resumeItemListStart
+                \resumeItem{\textbf{Title:} Can Natural Language Processing be used to preserve minority, regional and oppressed languages given the lack of data?}
+                 \resumeItem{\textbf{Project Objectives:} \textbf{i)} learn about the IT systems involved, their current and potential applications to this research topic, and the social and ethical issues that need to be considered in such applications, \textbf{ii)} investigate what global companies like Google, Microsoft, and Facebook are doing in this space, the challenges and limitations of the solutions/models they have developed, and how these models can be leveraged or enhanced to accomplish language preservation, \textbf{iii)} explore emerging technologies, how alternative sources of data can be used, and the ethical issues that need to be dealt with in tapping into those data sources.}
+              \resumeItemListEnd
+      
+    \resumeSubHeadingListEnd
+
+
+
+%----------- RESEARCH EXPERIENCE -----------
+
+% \section{Research Experience}
+%   \vspace{3pt}
+%   \resumeSubHeadingListStart
+  
+%     \resumeSubheading
+%       {Max Planck Institute for Intelligent Systems}{Stuttgart, Baden\textbf{-}Württemberg, Germany}
+%       {Undergraduate Research Assistant}{Jun 2022 \textbf{--} Aug 2022}
+%         \resumeItemListStart
+%             \resumeItem{Worked in the Physical Intelligence Department with Sinan Özgün Demir and Alp Can Karacakol on a project about 3D printing and heat-assisted magnetic programming of soft machines.}
+%             \resumeItem{Updated a ROS package for converting 3D motion controller events to ROS messages so that it synchronously operates at any given loop rate.}
+%             \resumeItem{Implemented an Arduino Mega driver for controlling a fluid dispenser, a laser, thermocouples, and a coil set. Updated ROS nodes for parsing G-codes and controlling stage movement and built the ROS-Arduino communication network to simulate a 3D printing and magnetic programming process.}
+%         \resumeItemListEnd
+    
+%   \resumeSubHeadingListEnd
+
+
+
+%----------- AWARDS & ACHIEVEMENTS -----------
+
+% \section{Awards \& Achievements}
+%   \vspace{2pt}
+%   \resumeSubHeadingListStart
+%     \small{\item{
+%         \textbf{MakeX Robotics Competition:}{ Second Runner Up} \\ \vspace{3pt}
+        
+%         \textbf{KidWind:}{ Judge’s Choice}
+%     }}
+%   \resumeSubHeadingListEnd
+
+
+
+%----------- SCHOLARSHIPS -----------
+
+\section{Scholarships}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{STEM+ Scholarship}
+
+        \textbf{Heald Scholarship}
+    }}
+  \resumeSubHeadingListEnd
+
+
+
+%----------- HOBBIES -----------
+
+% \section{Hobbies}
+%   \resumeSubHeadingListStart
+%     \small{\item{Jigsaw Puzzles, Eight-Ball Pool, Foosball}}
+%   \resumeSubHeadingListEnd
+
+
+
+%----------- REFERENCES -----------
+
+% \section{References}
+  % \resumeSubHeadingListStart
+    
+  % \resumeSubHeadingListEnd
+
+
+
+%-------------------------------------------
+\end{document}
