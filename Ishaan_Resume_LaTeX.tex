@@ -1,0 +1,266 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+    \item\vspace{-2pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      #3 & #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label=]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \Huge \scshape Ishaan Goel \\ \vspace{2pt}
+    \small
+    \href{tel:17712017576}{\underline{+1 771-201-7576}}
+    $|$ \href{mailto:igoeldxb@gmail.com}{\underline{igoeldxb@gmail.com}}
+    $|$ \href{https://linkedin.com/in/igoeldc}{\underline{linkedin.com/in/igoeldc}}
+    $|$ \href{https://github.com/igoeldc}{\underline{github.com/igoeldc}}
+\end{center}
+
+\vspace{-15px}
+%-----------SUMMARY-----------
+\section{Summary}
+  \resumeSubHeadingListStart
+    \item{Applied Mathematics and Artificial Intelligence Dual Degree sophomore student. Multicultural and multilingual.\\Keen interest in Generative and Applied AI. Seeking Computer Science internship to support business practitioners in research and application development to expand company growth.}\vspace{-5px}
+    \item{\textbf{Interests:} Mathematics, AI, Linguistics/Languages, World Cultures, Electronic Music Composition}\vspace{-5px}
+    \item{\textbf{Lived In:} Washington, D.C.; Hong Kong S.A.R.; Dubai, U.A.E.}
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\newcommand{\resumeEducationHeading}[9]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \emph{#2} & #3 \\
+      \hspace{20px}#4 & #5 \\
+      \hspace{20px}#6 & #7 \\
+      \hspace{20px}#8 & #9 \\
+      % \hspace{20px}#8 &
+    \end{tabular*}\vspace{-7pt}
+}
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeEducationHeading
+      {Illinois Institute of Technology}{GPA: 3.67/4.00}{Chicago, IL}
+      {B.S. in Applied Mathematics \emph{GPA: 3.76/4.00}}{Aug 2022 -- Present}
+      {B.S. in Artificial Intelligence \emph{GPA: 3.75/4.00}}{Aug 2022 -- Present}
+      {M.A.S. in Artificial Intelligence}{Starting Aug 2024}
+      % {Recipient of the Heald and STEM+ Scholarships}
+    \resumeSubheading
+      {Dubai American Academy}{Dubai, U.A.E.}{\hspace{20px}International Baccalaureate Diploma}{Aug 2020 -- May 2022}
+  \resumeSubHeadingListEnd
+
+
+%-----------RELEVANT COURSEWORK-----------
+\section{Relevant Coursework}
+\begin{itemize}[leftmargin=0.15in, label=]
+    \item \textbf{Math:} Multivariate and Vector Calculus, Intro to Mathematical Modeling, Discrete Math, Elementary Linear Algebra, ODEs and Dynamical Systems, Real Analysis, Applied Algebra, Combinatorics, Probability, Intro to Stochastic Processes, Linear Optimization, Intro to Computational Mathematics \vspace{-5pt}
+    \item \textbf{CS:} Accelerated Introduction to Computer Science, Data Structures and Algorithms, Data Mining,\\Intro to Artificial Intelligence, Programming Paradigms and Patterns \vspace{-5pt}
+    \item \textbf{In Progress:} Intro to Algorithms
+\end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+    \resumeSubheading{Undergraduate Research Assistant}{Jan 2024 -- Present}{Illinois Institute of Technology}{Chicago, IL}
+        \resumeItemListStart
+            \resumeItem{Researching how alignment models of collective behavior work in confined environments \\
+            Working with Cucker-Smale Equations with external force}
+            % \resumeItem{}
+            % \resumeItem{}
+        \resumeItemListEnd
+    % \resumeSubheading{ARC Tutor, Upper Level Math}{Jan 2024 -- Present}{Illinois Institute of Technology, Academic Resource Center (ARC)}{Chicago, IL}
+    %     \resumeItemListStart
+    %         \resumeItem{Help students with understanding concepts from various mathematical disciplines}
+    %         % \resumeItem{}
+    %         % \resumeItem{}
+    %     \resumeItemListEnd
+    \resumeSubheading{Student Assistant to Department Coordinator}{Jan 2023 -- May 2023}{Illinois Institute of Technology, Department of Applied Mathematics}{Chicago, IL}
+        \resumeItemListStart
+            \resumeItem{Assisted in the smooth functioning of the Department}
+            \resumeItem{Managed Department technology, restructured registration database, reorganized library, redesigned bulletin boards for better communication, planned admitted student event}
+            % \resumeItem{Collated past course registration information into a new, updated format}
+            % \resumeItem{Planned admitted student event}
+            % \resumeItem{Reorganized the Department library}
+            % \resumeItem{Redesigned Department-managed bulletin boards}
+            % \resumeItem{Setup and troubleshot technological interfaces to increase department productivity}
+        \resumeItemListEnd
+
+%-----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+\resumeSubHeadingListEnd
+
+
+%-----------LEADERSHIP ROLES-----------
+\section{Leadership Roles}
+\resumeSubHeadingListStart
+    \resumeItem{Network with and learn from practitioners about ongoing research in and applications of Mathematics, ML, AI, DS and Computer Science to engineering, industry, science, and society in solving real-world challenges.}
+    \resumeSubSubheading{\textbf{President}, Machine Learning at Illinois Institute of Technology (ML@IIT)}{May 2023 -- Present}
+    \resumeSubSubheading{\textbf{Vice President}, Society for Industrial and Applied Mathematics (SIAM) Chapter at IIT}{Dec 2022 -- Present}
+    \resumeSubSubheading{\textbf{Founder \& President}, AI Impact Club at Dubai American Academy}{Jan 2020 -- Jun 2022}
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        #1 & \small#2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\section{Projects}
+\resumeSubHeadingListStart
+    \resumeProjectHeading{\textbf{Erd\H{o}s Co-authorship Network} $|$ \emph{Network Theory, Python, BeautifulSoup, pandas}}{Feb 2023 -- May 2023}
+        \resumeItemListStart
+            \resumeItem{Learned how to: i) measure influence in a given network, and ii) identify and extract relevant network influence data}
+            \resumeItem{Developed a co-author network, determined relevant influence measures and applied them to identify influential co-authors}
+        \resumeItemListEnd
+    % \resumeProjectHeading{\textbf{IB Extended Essay}}{Mar 2021 -- Jan 2022}
+    %     \resumeItemListStart
+    %         \resumeItem{Research Topic: Can NLP be used to preserve minority, regional and opressed languages given the lack of data?}
+    %         \resumeItem{Learned about relevant IT systems and their social and ethical issues; investigated what global companies are doing, the challenges and limitations of their models, examined how these models can be leveraged to accomplish language preservation; explored emerging technologies and ethical use of alternative sources of data}
+    %     \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------CERTIFICATES-----------
+\section{Certificates}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \resumeItem{\textbf{DataCamp:}{ Data Manipulation in Julia, Intermediate Julia, Introduction to Data Visualization with Julia}}\vspace{-5px}
+    \resumeItem{\textbf{Codecademy:}{ Analyze Data with R Skill Path, Learn Java Course}}
+\end{itemize}
+
+
+%-----------CERTIFICATES-----------
+% \section{Certificates}
+%   \resumeSubHeadingListStart
+
+%     \resumeSubheading
+%       {DataCamp}{}
+%       {Data Manipulation in Julia, Intermediate Julia, Introduction to Data Visualization with Julia}{}
+
+%     \resumeSubheading
+%       {Codecademy}{}
+%       {Analyze Data with R Skill Path, Learn Java Course}{}
+
+%   \resumeSubHeadingListEnd
+
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small\item{
+    \textbf{Languages:} \emph{Fluent:} English, Hindi-Urdu, Mandarin Chinese; \emph{Intermediate:} Spanish, Arabic \\
+    \textbf{Programming:} Python, R, Java, Julia, Haskell, \LaTeX, RegEx \\
+    \textbf{Libraries:} NumPy, Matplotlib, pandas, BeautifulSoup; dplyr, ggplot2, caret \\
+    \textbf{Software:} Photoshop, Illustrator
+    % \textbf{Frameworks}{: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI} \\
+    % \textbf{Developer Tools}{: Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse}
+    }
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}
