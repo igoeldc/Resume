@@ -3,14 +3,36 @@
 # Get today's date in mm/dd/yy format
 today=$(date +"%m/%d/%y")
 
-echo "📥 Pulling latest .tex from Overleaf..."
-git pull overleaf master --allow-unrelated-histories
+echo "📥 Pulling latest .tex from Overleaf (auto-resolving in favor of Overleaf)..."
+git fetch overleaf master
+git merge -X theirs overleaf/master --no-edit
 
-echo "📄 Done. Now download the latest resume.pdf from Overleaf manually."
-read "?⏳ Press Enter once resume.pdf is downloaded..."
+# Automatically remove the merge commit but keep Overleaf changes staged
+echo "🧽 Cleaning up merge context..."
+# git reset --soft HEAD~1
+echo "🧠 Rewriting Overleaf merge into a clean commit..."
 
-# Stage both .tex and .pdf
-git add resume.tex resume.pdf
+echo "📄 Done. Now download the latest Ishaan_Goel_Resume.pdf from Overleaf manually."
+read "?⏳ Press Enter once Ishaan_Goel_Resume.pdf is downloaded..."
+
+# Stage files only if they've changed
+staged_anything=false
+
+if git diff --quiet --exit-code -- Ishaan_Resume_LaTeX.tex; then
+  echo "📝 .tex file unchanged."
+else
+  git add Ishaan_Resume_LaTeX.tex
+  echo "📌 Staged .tex file"
+  staged_anything=true
+fi
+
+if git diff --quiet --exit-code -- Ishaan_Goel_Resume.pdf; then
+  echo "📄 .pdf file unchanged."
+else
+  git add Ishaan_Goel_Resume.pdf
+  echo "📌 Staged .pdf file"
+  staged_anything=true
+fi
 
 # Ask about using default commit message
 default_msg="Updated resume $today"
@@ -22,10 +44,12 @@ else
     read "?📝 Enter custom commit message: " commit_msg
 fi
 
-git commit -m "$commit_msg"
-
-# Push to GitHub
-echo "🚀 Pushing to GitHub (origin)..."
-git push origin master
-
-echo "✅ Done. Overleaf changes pulled, PDF included, and commit pushed to GitHub."
+# Commit and push if something was staged
+if [[ "$staged_anything" = true ]]; then
+  git commit -m "$commit_msg"
+  echo "🚀 Pushing to GitHub (origin)..."
+  git push origin master
+  echo "✅ Clean commit created, merge removed, and pushed to GitHub."
+else
+  echo "⚠️ No changes to commit. Nothing pushed."
+fi
