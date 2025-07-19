@@ -3,35 +3,33 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
-# --- Pre-flight Check ---
-echo "🔎 Checking for clean working directory..."
-if ! git diff --quiet --exit-code; then
-  echo "❌ Error: Your working directory is not clean. Please commit or stash your changes before running this script."
-  exit 1
+# --- PDF Check ---
+echo "🔎 Checking for local PDF changes..."
+if ! git diff --quiet --exit-code -- Ishaan_Goel_Resume.pdf; then
+  echo "📌 Staging modified PDF..."
+  git add Ishaan_Goel_Resume.pdf
+else
+  echo "📄 PDF is unchanged."
 fi
-echo "✅ Working directory is clean."
 
 # --- Overleaf Sync ---
 echo "📥 Pulling latest .tex from Overleaf..."
 git fetch overleaf master
-
 echo "Applying changes from Overleaf..."
-# Use squash to apply changes without a merge commit
 git merge --squash overleaf/master
 
-# Check if the squash merge resulted in any changes
-if git diff --cached --quiet; then
-  echo "✅ No new changes from Overleaf. Nothing to do."
-  exit 0
+# --- Staging .tex ---
+# Stage the .tex file only if it was changed by the merge
+if ! git diff --quiet --exit-code -- Ishaan_Resume_LaTeX.tex; then
+    echo "📌 Staging modified .tex file..."
+    git add Ishaan_Resume_LaTeX.tex
 fi
 
-# --- Manual PDF Step ---
-echo "📄 .tex file updated. Now download the latest Ishaan_Goel_Resume.pdf from Overleaf manually."
-read "?⏳ Press Enter once Ishaan_Goel_Resume.pdf is downloaded..."
-
-# --- Staging ---
-echo "📌 Staging .tex and .pdf files..."
-git add Ishaan_Resume_LaTeX.tex Ishaan_Goel_Resume.pdf
+# --- Check for Changes ---
+if git diff --cached --quiet; then
+  echo "✅ No changes to commit. Working directory is clean."
+  exit 0
+fi
 
 # --- Commit ---
 today=$(date +"%m/%d/%y")
@@ -44,6 +42,7 @@ if [[ "$use_default" =~ ^[Yy]?$ ]]; then
 else
     read "?📝 Enter custom commit message: " commit_msg
 fi
+
 
 echo "📝 Committing changes..."
 git commit -m "$commit_msg"
