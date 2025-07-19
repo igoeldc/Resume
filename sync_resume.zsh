@@ -1,55 +1,49 @@
 #!/bin/zsh
 
-# Get today's date in mm/dd/yy format
-today=$(date +"%m/%d/%y")
+# Exit immediately if a command exits with a non-zero status.
+set -e
 
-echo "📥 Pulling latest .tex from Overleaf (auto-resolving in favor of Overleaf)..."
+# --- Pre-flight Check ---
+echo "🔎 Checking for clean working directory..."
+if ! git diff --quiet --exit-code; then
+  echo "❌ Error: Your working directory is not clean. Please commit or stash your changes before running this script."
+  exit 1
+fi
+echo "✅ Working directory is clean."
+
+# --- Overleaf Sync ---
+echo "📥 Pulling latest .tex from Overleaf..."
 git fetch overleaf master
-git merge -X theirs overleaf/master --no-edit
 
-# Automatically remove the merge commit but keep Overleaf changes staged
-echo "🧽 Cleaning up merge context..."
-# git reset --soft HEAD~1
-echo "🧠 Rewriting Overleaf merge into a clean commit..."
+echo "Applying changes from Overleaf..."
+# Use squash to apply changes without a merge commit
+git merge --squash overleaf/master
 
-echo "📄 Done. Now download the latest Ishaan_Goel_Resume.pdf from Overleaf manually."
+# --- Manual PDF Step ---
+echo "📄 .tex file updated. Now download the latest Ishaan_Goel_Resume.pdf from Overleaf manually."
 read "?⏳ Press Enter once Ishaan_Goel_Resume.pdf is downloaded..."
 
-# Stage files only if they've changed
-staged_anything=false
+# --- Staging ---
+echo "📌 Staging .tex and .pdf files..."
+git add Ishaan_Resume_LaTeX.tex Ishaan_Goel_Resume.pdf
 
-if git diff --quiet --exit-code -- Ishaan_Resume_LaTeX.tex; then
-  echo "📝 .tex file unchanged."
-else
-  git add Ishaan_Resume_LaTeX.tex
-  echo "📌 Staged .tex file"
-  staged_anything=true
-fi
-
-if git diff --quiet --exit-code -- Ishaan_Goel_Resume.pdf; then
-  echo "📄 .pdf file unchanged."
-else
-  git add Ishaan_Goel_Resume.pdf
-  echo "📌 Staged .pdf file"
-  staged_anything=true
-fi
-
-# Ask about using default commit message
+# --- Commit ---
+today=$(date +"%m/%d/%y")
 default_msg="Updated resume $today"
-read "?✏️ Use default commit message: \"$default_msg\"? (y/n): " use_default
 
-if [[ "$use_default" == "y" ]]; then
+read "?✏️ Use default commit message: \"$default_msg\"? (Y/n): " use_default
+
+if [[ "$use_default" =~ ^[Yy]?$ ]]; then
     commit_msg="$default_msg"
 else
     read "?📝 Enter custom commit message: " commit_msg
 fi
 
-# Commit and push if something was staged
-if [[ "$staged_anything" = true ]]; then
-  git commit -m "$commit_msg"
-  echo "🚀 Pushing to GitHub (origin)..."
-  git push origin master
-  echo "✅ Clean commit created, merge removed, and pushed to GitHub."
-else
-  echo "⚠️ No changes to commit. Nothing pushed."
-fi
+echo "📝 Committing changes..."
+git commit -m "$commit_msg"
+
+# --- Push ---
+echo "🚀 Pushing to GitHub (origin)..."
+git push origin master
+
+echo "✅ Resume synced and pushed to GitHub."
