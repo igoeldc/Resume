@@ -3,11 +3,14 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
-# --- PDF Check ---
+pdf_committed=false
+# --- PDF Check and Commit ---
 echo "🔎 Checking for local PDF changes..."
 if ! git diff --quiet --exit-code -- Ishaan_Goel_Resume.pdf; then
-  echo "📌 Staging modified PDF..."
+  echo "📝 Committing modified PDF to clean working directory..."
   git add Ishaan_Goel_Resume.pdf
+  git commit -m "chore: Temporarily commit PDF"
+  pdf_committed=true
 else
   echo "📄 PDF is unchanged."
 fi
@@ -15,23 +18,37 @@ fi
 # --- Overleaf Sync ---
 echo "📥 Pulling latest .tex from Overleaf..."
 git fetch overleaf master
-echo "Applying changes from Overleaf..."
-git merge --squash overleaf/master
 
-# --- Staging .tex ---
-# Stage the .tex file only if it was changed by the merge
-if ! git diff --quiet --exit-code -- Ishaan_Resume_LaTeX.tex; then
-    echo "📌 Staging modified .tex file..."
-    git add Ishaan_Resume_LaTeX.tex
+overleaf_head=$(git rev-parse overleaf/master)
+head=$(git rev-parse HEAD)
+
+overleaf_has_changes=false
+if [ "$overleaf_head" != "$head" ]; then
+    echo "Merging changes from Overleaf..."
+    git merge overleaf/master --no-edit
+    overleaf_has_changes=true
+else
+    echo "✅ Overleaf is already up to date."
 fi
 
-# --- Check for Changes ---
-if git diff --cached --quiet; then
-  echo "✅ No changes to commit. Working directory is clean."
-  exit 0
+# --- Consolidate Commits ---
+commits_to_squash=0
+if [ "$pdf_committed" = true ]; then
+    commits_to_squash=$((commits_to_squash + 1))
+fi
+if [ "$overleaf_has_changes" = true ]; then
+    commits_to_squash=$((commits_to_squash + 1))
 fi
 
-# --- Commit ---
+if [ "$commits_to_squash" -gt 0 ]; then
+    echo "🧽 Consolidating changes into a single commit..."
+    git reset --soft "HEAD~$commits_to_squash"
+else
+    echo "✅ No changes to commit. Working directory is clean."
+    exit 0
+fi
+
+# --- Final Commit ---
 today=$(date +"%m/%d/%y")
 default_msg="Updated resume $today"
 
@@ -42,7 +59,6 @@ if [[ "$use_default" =~ ^[Yy]?$ ]]; then
 else
     read "?📝 Enter custom commit message: " commit_msg
 fi
-
 
 echo "📝 Committing changes..."
 git commit -m "$commit_msg"
