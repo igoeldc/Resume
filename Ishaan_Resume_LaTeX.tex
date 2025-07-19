@@ -1,0 +1,220 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Ishaan Goel
+% Based off of: https://github.com/sb2nov/resume
+% License: MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\setlength{\footskip}{3.60004pt}
+
+% Adjust indent size
+\newcommand\indentsize{10pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+    \item\vspace{-2pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \normalsize
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label=]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=\indentsize, label=-]\vspace{-7pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \Huge Ishaan Goel \\ \vspace{2pt}
+    \large
+    \href{tel:17712017576}{+1 771-201-7576}
+    $|$ \href{mailto:igoeldxb@gmail.com}{igoeldxb@gmail.com}
+    $|$ \href{https://linkedin.com/in/igoeldc/}{linkedin.com/in/igoeldc}
+    $|$ \href{https://github.com/igoeldc}{github.com/igoeldc}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+  \resumeSubHeadingListStart
+    \item{AI Researcher and developer with deep quantitative foundations, demonstrated success in architecting a multi-agent RAG system for a 1,000+ user enterprise. Seeking to apply expertise in generative AI and stochastic modeling to solve complex problems in NLP and computational finance.}
+  \resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%-----------EDUCATION-----------
+\newcommand{\resumeEducationHeading}[9]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} {#2} & #3 \\
+      \hspace{\indentsize} #4 & #5 \\
+      \hspace{20pt} #6 & \\
+      \hspace{20pt} \textit{#7} & \\
+      \hspace{\indentsize} #8 & #9
+    \end{tabular*}
+}
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeEducationHeading
+      {\href{https://www.iit.edu/}{Illinois Institute of Technology}}{(3.73/4.00)}{Chicago, IL}{Dual B.S. \href{https://catalog.iit.edu/undergraduate/colleges/computing/applied-mathematics/bs/\#text}{Applied Mathematics} and \href{https://catalog.iit.edu/undergraduate/colleges/computing/computer-science/\#:~:text=The\%20B.S.\%20in\%20Data,be\%20successful\%20data\%20science\%20professionals.}{Data Science}}{Aug 2022 -- Present}{Minor in \href{https://catalog.iit.edu/undergraduate/colleges/business/minor-finance/\#:~:text=business\%20schools\%20worldwide.-,Required\%20Courses,-Course\%20List}{Finance}}
+      {Recipient of the Heald and STEM+ Scholarships}{M.A.S. \href{https://catalog.iit.edu/graduate/colleges/computing/computer-science/master-artificial-intelligence/\#overviewtext}{Artificial Intelligence}}{Aug 2024 -- Present}
+  \resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%-----------RELEVANT COURSEWORK-----------
+\section{Relevant Coursework}
+\resumeSubHeadingListStart
+    \item \textbf{Math:} Probability, Linear Optimization, Intro to Stochastic Processes, Graph Theory, Monte Carlo Methods in Finance \vspace{-5pt}
+    \item \textbf{AI/ML:} Machine Learning, AI Language Understanding, Data Mining, Data Preparation and Analysis \vspace{-5pt}
+    % \item \textbf{Other:} Language Theory in NLP, Deep Technology Commercialization \vspace{-5pt}
+    \item \textbf{Enrolled:} Information Retrieval, Deep Learning
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+    \resumeSubheading{Research Assistant}{May 2025 -- Present}{\href{https://www.iit.edu/computing}{Illinois Institute of Technology, College of Computing}}{Chicago, IL}
+        \resumeItemListStart
+            \resumeItem{Developing a Markov Chain sampler in Python to generate uniformly random hypergraphs with prespecified $k$-core sequences.}
+        \resumeItemListEnd
+
+    \resumeSubheading{Research Assistant}{Aug 2024 -- Present}{\href{https://www.iit.edu/applied-math}{Illinois Institute of Technology, Department of Applied Mathematics}}{Chicago, IL}
+    \textit{Under \href{https://cialenco.com}{Dr. Igor Cialenco}, \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=2407549&HistoricalAwards=false}{NSF-funded research}}
+        \resumeItemListStart
+            \resumeItem{Developing a stochastic mathematical framework for sustainable groundwater management under California's SGMA.}
+            \resumeItem{Applying concepts from stochastic games and Nash equilibria to model groundwater rights pricing and assess policy impacts for global water markets.}
+            \resumeItem{Designing computational algorithms for multi-stakeholder equilibrium analysis by integrating mathematical theory with hydrological and economic data.}
+        \resumeItemListEnd
+
+    \resumeSubheading{Intern}{July 2024}{\href{https://www.peoplestrong.com/about-us/}{PeopleStrong Technologies Ltd.}}{Gurugram, India}
+        \resumeItemListStart
+            \resumeItem{Developed and architected a chatbot for employee query management using Retrieval Augmented Generation (RAG) and LLMs, intended to serve over 1,000 employees.}
+            \resumeItem{Designed an agentic architecture integrating 5+ specialized RAG systems, and performed A/B testing to validate the approach, leading to a planned company-wide deployment after presenting findings to leadership.}
+        \resumeItemListEnd
+
+    % \resumeSubheading{Research Assistant}{Jan 2024 -- Jun 2024}{\href{https://www.iit.edu/computing}{Illinois Institute of Technology, College of Computing}}{Chicago, IL}
+    %     \resumeItemListStart
+    %         \resumeItem{Modeled collective behavior in multi-agent systems with restricted fields of view by developing a simulation for a 1-dimensional Cucker-Smale model with asymmetrical communication.}
+    %     \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\newcommand{\resumeProjectHeading}[2]{
+    \item \normalsize
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        #1 & \small#2 \\
+    \end{tabular*}%\vspace{-7pt}
+}
+
+\section{Projects}
+\resumeSubHeadingListStart
+    \resumeProjectHeading{\href{https://github.com/igoeldc/AI-Language-Understanding-Projects}{\textbf{Natural Language Understanding Projects}} $|$ \emph{NLP, Python}}{Aug 2024 -- Dec 2024}
+        \resumeItemListStart
+            \resumeItem{Built core NLP models from scratch, including a probabilistic language model, a Naïve Bayes classifier, and a $k$NN classifier.}
+        \resumeItemListEnd
+    \resumeProjectHeading{\href{https://github.com/jacobhthomas/CollabGraph}{\textbf{Erd\H{o}s Co-authorship Network}} $|$ \emph{Graph Theory, Python, NetworkX}}{Feb 2023 -- May 2023}
+        \resumeItemListStart
+            \resumeItem{Analyzed a 500+ node co-authorship network, applying centrality measures to identify key researchers and reveal collaborative patterns.}
+        \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------LEADERSHIP ROLES-----------
+\section{Leadership Roles}
+\resumeSubHeadingListStart
+    \resumeSubSubheading{\textbf{President}, Machine Learning at Illinois Institute of Technology (ML@IIT)}{Jan 2023 -- Present}
+    \resumeItem{Organized speaker events and workshops on cutting-edge AI techniques, increasing attendance eighteen-fold and fostering campus-wide collaboration on AI projects.}
+    \resumeSubSubheading{\textbf{Vice President}, Society for Industrial and Applied Mathematics (SIAM) Chapter at IIT}{Dec 2022 -- Present}
+    \resumeItem{Spearheaded initiatives connecting students to research opportunities in applied mathematics by hosting professor talks and organizing networking events for students across multiple disciplines related to mathematics.}
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \item \textbf{Programming:} Python, R, C++, Julia, Java, Mathematica, MATLAB, \LaTeX, HTML, CSS, SQL, NoSQL
+    \item \vspace{-5pt} \textbf{Python Stack:} PyTorch, scikit-learn, NumPy, pandas, matplotlib, Streamlit
+    \item \vspace{-5pt} \textbf{R Stack:} tidyverse, caret, rpart, glmnet, e1071, keras
+    % \item \vspace{-5pt} \textbf{Spoken Languages:} English, Hindi-Urdu, Mandarin Chinese, Spanish, Modern Standard Arabic, Panjabi
+\end{itemize}
+
+\end{document}
