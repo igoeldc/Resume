@@ -19,6 +19,12 @@ echo "Applying changes from Overleaf..."
 # Use squash to apply changes without a merge commit
 git merge --squash overleaf/master
 
+# Check if the squash merge resulted in any changes
+if git diff --cached --quiet; then
+  echo "✅ No new changes from Overleaf. Nothing to do."
+  exit 0
+fi
+
 # --- Manual PDF Step ---
 echo "📄 .tex file updated. Now download the latest Ishaan_Goel_Resume.pdf from Overleaf manually."
 read "?⏳ Press Enter once Ishaan_Goel_Resume.pdf is downloaded..."
