@@ -18,10 +18,6 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-% \usepackage{helvet}
-% \usepackage{lmodern}
-% \usepackage{tgadventor}
-% \usepackage{tgheros}
 \input{glyphtounicode}
 
 
@@ -42,7 +38,6 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\renewcommand{\familydefault}{\rmdefault}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
@@ -50,7 +45,7 @@
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
-\setlength{\footskip}{3.60004pt} % comment out maybe
+\setlength{\footskip}{3.60004pt}
 
 % Adjust indent size
 \newcommand\indentsize{10pt}
@@ -81,12 +76,13 @@
     \item\vspace{-2pt}
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      #3 & #4 \\
-    \end{tabular*}%\vspace{-7pt}
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
-    \item \normalsize
+    \item
+    \normalsize
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       #1 & #2 \\
     \end{tabular*}\vspace{-7pt}
@@ -105,7 +101,6 @@
 %%%%%%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-% \sffamily
 
 %----------HEADING----------
 \begin{center}
@@ -113,23 +108,17 @@
     \large
     \href{tel:17712017576}{+1 771-201-7576}
     $|$ \href{mailto:igoeldxb@gmail.com}{igoeldxb@gmail.com}
-    $|$ \href{https://linkedin.com/in/igoeldc/}{linkedin.com/in/igoeldc/}
-    $|$ 
-    % \\
-    \href{https://github.com/igoeldc}{github.com/igoeldc}
-    % $|$ Portfolio Site: \href{https://igoeldc.github.io}{igoeldc.github.com}
+    $|$ \href{https://linkedin.com/in/igoeldc/}{linkedin.com/in/igoeldc}
+    $|$ \href{https://github.com/igoeldc}{github.com/igoeldc}
 \end{center}
 
-% \vspace{-7pt}
 %-----------SUMMARY-----------
 \section{Summary}
   \resumeSubHeadingListStart
-    \item{Mathematics and AI researcher and developer specializing in ML and NLP, with demonstrated success in designing a scalable, agentic, RAG-based system for enterprise applications. Experience creating generative models. Globally adaptable, multilingual and aiming to pioneer generative AI solutions in NLP and/or finance applications.}\vspace{-5pt}
-    % \item{\textbf{Interests:} Linguistics/Languages, World Cultures, Electronic Music Composition}\vspace{-5pt}
-    % \item{\textbf{Lived In:} Washington, D.C.; Hong Kong; Dubai; Chicago}
+    \item{AI Researcher and developer with deep quantitative foundations, demonstrated success in architecting a multi-agent RAG system for a 1,000+ user enterprise. Seeking to apply expertise in generative AI and stochastic modeling to solve complex problems in NLP and computational finance.}
   \resumeSubHeadingListEnd
+\vspace{-10pt}
 
-% \vspace{-15pt}
 %-----------EDUCATION-----------
 \newcommand{\resumeEducationHeading}[9]{
   \item
@@ -145,88 +134,50 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeEducationHeading
-      {\href{https://www.iit.edu/}{Illinois Institute of Technology}}{(3.73/4.00)}{Chicago, IL}{Dual B.S. \href{https://catalog.iit.edu/undergraduate/colleges/computing/applied-mathematics/bs/\#text}{Applied Mathematics} and \href{https://catalog.iit.edu/undergraduate/colleges/computing/computer-science/\#:~:text=The\%20B.S.\%20in\%20Data,be\%20successful\%20data\%20science\%20professionals.}{Data Science}}{Aug 2022 -- Present}{Minor in
-      % \href{https://catalog.iit.edu/undergraduate/colleges/computing/computer-science/minor-computational-structures/}{Computational Structures} and 
-      \href{https://catalog.iit.edu/undergraduate/colleges/business/minor-finance/\#:~:text=business\%20schools\%20worldwide.-,Required\%20Courses,-Course\%20List}{Finance}}
+      {\href{https://www.iit.edu/}{Illinois Institute of Technology}}{(3.73/4.00)}{Chicago, IL}{Dual B.S. \href{https://catalog.iit.edu/undergraduate/colleges/computing/applied-mathematics/bs/\#text}{Applied Mathematics} and \href{https://catalog.iit.edu/undergraduate/colleges/computing/computer-science/\#:~:text=The\%20B.S.\%20in\%20Data,be\%20successful\%20data\%20science\%20professionals.}{Data Science}}{Aug 2022 -- Present}{Minor in \href{https://catalog.iit.edu/undergraduate/colleges/business/minor-finance/\#:~:text=business\%20schools\%20worldwide.-,Required\%20Courses,-Course\%20List}{Finance}}
       {Recipient of the Heald and STEM+ Scholarships}{M.A.S. \href{https://catalog.iit.edu/graduate/colleges/computing/computer-science/master-artificial-intelligence/\#overviewtext}{Artificial Intelligence}}{Aug 2024 -- Present}
-      % \item \hspace{6pt} Minors: Computational Structures, Applied Mathematics \vspace{-5pt} %Data Science, Finance
-    % \resumeSubheading
-    %   {Dubai American Academy}{Dubai, U.A.E.}{\hspace{20pt}International Baccalaureate Diploma}{Aug 2020 -- May 2022}
   \resumeSubHeadingListEnd
+\vspace{-10pt}
 
-\vspace{-12pt}
 %-----------RELEVANT COURSEWORK-----------
 \section{Relevant Coursework}
 \resumeSubHeadingListStart
     \item \textbf{Math:} Probability, Linear Optimization, Intro to Stochastic Processes, Graph Theory, Monte Carlo Methods in Finance \vspace{-5pt}
-    \item \textbf{CS:} Data Structures and Algorithms, Machine Learning, AI Language Understanding, Data Mining \vspace{-5pt}
-    \item \textbf{Other:} Language Theory in NLP, Deep Technology Commercialization \vspace{-5pt}
-    \item \textbf{Enrolled:} Data Preparation and Analysis, Modern Methods in Discrete Applied Math, SPDEs
+    \item \textbf{AI/ML:} Machine Learning, AI Language Understanding, Data Mining, Data Preparation and Analysis \vspace{-5pt}
+    % \item \textbf{Other:} Language Theory in NLP, Deep Technology Commercialization \vspace{-5pt}
+    \item \textbf{Enrolled:} Information Retrieval, Deep Learning
 \resumeSubHeadingListEnd
-
+\vspace{-10pt}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
 \resumeSubHeadingListStart
-    % \resumeSubheading{Intern}{Jul 2024}{\href{https://www.peoplestrong.com/about-us/}{PeopleStrong Technologies Ltd.}}{Remote}
-    %     \resumeItemListStart
-    %         \resumeItem{Developing}
-    %     \resumeItemListEnd
-    
-    % \resumeSubheading{Research Assistant}{Aug 2024 -- Present}{\href{https://www.iit.edu/applied-math}{Illinois Institute of Technology, Department of Applied Mathematics}}{Chicago, IL}
-    % \textit{Under \href{https://cialenco.com}{Dr. Igor Cialenco}, \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=2407549&HistoricalAwards=false}{NSF-funded research}}
-    %     \resumeItemListStart
-    %         \resumeItem{Developing a stochastic mathematical framework to address sustainable groundwater management, focusing on equitable water allocation and dynamic market regulations under California's SGMA.}
-    %     \resumeItemListEnd
-    
+
+    \resumeSubheading{Research Assistant}{May 2025 -- Present}{\href{https://www.iit.edu/computing}{Illinois Institute of Technology, College of Computing}}{Chicago, IL}
+        \resumeItemListStart
+            \resumeItem{Developing a Markov Chain sampler in Python to generate uniformly random hypergraphs with prespecified $k$-core sequences.}
+        \resumeItemListEnd
+
     \resumeSubheading{Research Assistant}{Aug 2024 -- Present}{\href{https://www.iit.edu/applied-math}{Illinois Institute of Technology, Department of Applied Mathematics}}{Chicago, IL}
     \textit{Under \href{https://cialenco.com}{Dr. Igor Cialenco}, \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=2407549&HistoricalAwards=false}{NSF-funded research}}
         \resumeItemListStart
-            % \resumeItem{Applying reinforcement learning to compute Nash equilibria in dynamic non-cooperative games. \vspace{-2pt}}
-            % \resumeItem{Findings aim to optimize resource allocation models in multi-agent systems, resulting in actionable strategies for resource allocation in underground water management systems.}
-            \resumeItem{Developing a stochastic mathematical framework to address sustainable groundwater management, focusing on equitable water allocation and dynamic market regulations under California's SGMA.}
-            \resumeItem{Applying concepts from stochastic games and Nash equilibria to model groundwater rights pricing, assess policy impacts, and support scalable, adaptable solutions for global water markets.}
-            \resumeItem{Collaborating on interdisciplinary research by integrating mathematical theory with hydrological and economic data, while designing computational algorithms for multi-stakeholder equilibrium analysis.}
+            \resumeItem{Developing a stochastic mathematical framework for sustainable groundwater management under California's SGMA.}
+            \resumeItem{Applying concepts from stochastic games and Nash equilibria to model groundwater rights pricing and assess policy impacts for global water markets.}
+            \resumeItem{Designing computational algorithms for multi-stakeholder equilibrium analysis by integrating mathematical theory with hydrological and economic data.}
         \resumeItemListEnd
-    
-    \resumeSubheading{Intern}{Jul 2024}{\href{https://www.peoplestrong.com/about-us/}{PeopleStrong Technologies Ltd.}}{Gurugram, India}
-        \resumeItemListStart
-            \resumeItem{Developed a chatbot for employee query management using Retrieval Augmented Generation (RAG) architectures and Large Language Models (LLMs). The chatbot is intended to serve 1,000+ employees.}
-            \resumeItem{Key accomplishments include designing an agentic chatbot architecture that integrates 5+ RAG systems, conducting A/B testing to evaluate RAG feasibility, researching LLM response evaluation, fine-tuning AI assistants, and employing prompt engineering for high-quality responses. Presented findings to company leadership, resulting in planned company-wide deployment.}
-        \resumeItemListEnd
-    
-    % \resumeSubheading{Research Assistant}{Jan 2024 -- Jun 2024}{Illinois Institute of Technology, Department of Applied Mathematics}{Chicago, IL}
-    %     \resumeItemListStart
-    %         \resumeItem{Modeled multi-agent behaviors using Cucker-Smale ODEs, advancing understanding of asymmetric communication protocols\\in systems with limited fields of view.}
-    %     \resumeItemListEnd
-    
-    % \resumeSubheading{Peer Tutor, Upper Level Math}{Jan 2024 -- Present}{Illinois Institute of Technology, Academic Resource Center (ARC)}{Chicago, IL}
-    %     \resumeItemListStart
-    %         \resumeItem{As a math tutor, I enhance my peers' understanding of mathematical concepts through intuitive explanations while ensuring mathematical rigor. In problem-solving, I guide them to independently discover solution steps, promoting critical thinking and self-reliance.}
-    %     \resumeItemListEnd
-    
-    % \resumeSubheading{Student Assistant to Department Coordinator}{Jan 2023 -- May 2023}{Illinois Institute of Technology, Department of Applied Mathematics}{Chicago, IL}
-    %     \resumeItemListStart
-    %         \resumeItem{Assisted in the smooth functioning of the Department}
-    %         \resumeItem{Managed Department technology, restructured registration database, reorganized library, redesigned bulletin boards for better communication, planned admitted student event}
-    %         % \resumeItem{Collated past course registration information into a new, updated format}
-    %         % \resumeItem{Planned admitted student event}
-    %         % \resumeItem{Reorganized the Department library}
-    %         % \resumeItem{Redesigned Department-managed bulletin boards}
-    %         % \resumeItem{Setup and troubleshot technological interfaces to increase department productivity}
-    %     \resumeItemListEnd
 
-%-----------Multiple Positions Heading-----------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%-------------------------------------------
+    \resumeSubheading{Intern}{July 2024}{\href{https://www.peoplestrong.com/about-us/}{PeopleStrong Technologies Ltd.}}{Gurugram, India}
+        \resumeItemListStart
+            \resumeItem{Developed and architected a chatbot for employee query management using Retrieval Augmented Generation (RAG) and LLMs, intended to serve over 1,000 employees.}
+            \resumeItem{Designed an agentic architecture integrating 5+ specialized RAG systems, and performed A/B testing to validate the approach, leading to a planned company-wide deployment after presenting findings to leadership.}
+        \resumeItemListEnd
+
+    % \resumeSubheading{Research Assistant}{Jan 2024 -- Jun 2024}{\href{https://www.iit.edu/computing}{Illinois Institute of Technology, College of Computing}}{Chicago, IL}
+    %     \resumeItemListStart
+    %         \resumeItem{Modeled collective behavior in multi-agent systems with restricted fields of view by developing a simulation for a 1-dimensional Cucker-Smale model with asymmetrical communication.}
+    %     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
-
 
 %-----------PROJECTS-----------
 \newcommand{\resumeProjectHeading}[2]{
@@ -240,73 +191,30 @@
 \resumeSubHeadingListStart
     \resumeProjectHeading{\href{https://github.com/igoeldc/AI-Language-Understanding-Projects}{\textbf{Natural Language Understanding Projects}} $|$ \emph{NLP, Python}}{Aug 2024 -- Dec 2024}
         \resumeItemListStart
-            \resumeItem{Developed a probabilistic language model, a Na\"{i}ve Bayes classifier, and a \textit{k}NN classifier in Python from scratch.}
+            \resumeItem{Built core NLP models from scratch, including a probabilistic language model, a Naïve Bayes classifier, and a $k$NN classifier.}
         \resumeItemListEnd
-        % \resumeProjectHeading{\href{https://github.com/jacobhthomas/CollabGraph}{\textbf{Erd\H{o}s Co-authorship Network}} $|$ \emph{Network Theory, Python, BeautifulSoup, pandas}}{Feb 2023 -- May 2023}
-        % \resumeItemListStart
-        %     \resumeItem{Developed a co-author network, determined relevant influence measures and applied them to identify influential co-authors. Applied centrality measures to determine key researchers, revealing collaborative patterns across 500+ nodes. Insights can guide academic collaborations and resource prioritization in research.}
-        % \resumeItemListEnd
-    % \resumeProjectHeading{\textbf{IB Extended Essay}}{Mar 2021 -- Jan 2022}
-    %     \resumeItemListStart
-    %         \resumeItem{Research Topic: Can NLP be used to preserve minority, regional and opressed languages given the lack of data?}
-    %         \resumeItem{Learned about relevant IT systems and their social and ethical issues; investigated what global companies are doing, the challenges and limitations of their models, examined how these models can be leveraged to accomplish language preservation; explored emerging technologies and ethical use of alternative sources of data}
-    %     \resumeItemListEnd
+    \resumeProjectHeading{\href{https://github.com/jacobhthomas/CollabGraph}{\textbf{Erd\H{o}s Co-authorship Network}} $|$ \emph{Graph Theory, Python, NetworkX}}{Feb 2023 -- May 2023}
+        \resumeItemListStart
+            \resumeItem{Analyzed a 500+ node co-authorship network, applying centrality measures to identify key researchers and reveal collaborative patterns.}
+        \resumeItemListEnd
 \resumeSubHeadingListEnd
-
 
 %-----------LEADERSHIP ROLES-----------
 \section{Leadership Roles}
 \resumeSubHeadingListStart
     \resumeSubSubheading{\textbf{President}, Machine Learning at Illinois Institute of Technology (ML@IIT)}{Jan 2023 -- Present}
-    \resumeItem{Organized speaker events and workshops on cutting-edge AI techniques, increasing attendance eighteen-fold. Expanded knowledge-sharing opportunities, fostering campus-wide collaboration on AI projects.}
+    \resumeItem{Organized speaker events and workshops on cutting-edge AI techniques, increasing attendance eighteen-fold and fostering campus-wide collaboration on AI projects.}
     \resumeSubSubheading{\textbf{Vice President}, Society for Industrial and Applied Mathematics (SIAM) Chapter at IIT}{Dec 2022 -- Present}
-    \resumeItem{Spearheaded initiatives connecting students to research opportunities in applied mathematics by hosting professors to talk about their research. Organized networking events for students in applied mathematics.}
-    % \resumeSubSubheading{\textbf{Founder \& President}, AI Impact Club at Dubai American Academy}{Jan 2020 -- Jun 2022}
+    \resumeItem{Spearheaded initiatives connecting students to research opportunities in applied mathematics by hosting professor talks and organizing networking events for students across multiple disciplines related to mathematics.}
 \resumeSubHeadingListEnd
 
-
 %-----------SKILLS-----------
-% \section{Skills}
-% \small
-% \begin{itemize}[leftmargin=0.15in, label={}]
-%     \item \textbf{Programming/Markup:} Python, R, Julia, Mathematica, MATLAB, Java, \LaTeX, HTML, CSS, SQL
-%     \item \vspace{-2pt} \textbf{Stack:} Scientific Python (numpy, scipy, Pandas, matplotlib, scikit-learn)
-%     \item \vspace{-2pt} \textbf{Libraries:} NumPy, Matplotlib, pandas, BeautifulSoup; dplyr, ggplot2, caret
-%     \item \vspace{-2pt} \textbf{Spoken Languages:} English, Hindi-Urdu, Mandarin Chinese, Spanish, Modern Standard Arabic
-%     % \item \vspace{-5pt} \textbf{Software:} Photoshop, Illustrator, Spline, DaVinci Resolve, Audacity, Ableton Live, Reaper, Musescore
-%     % \item \vspace{-5pt} \textbf{Developer Tools}{: VS Code, PyCharm, IntelliJ, Eclipse}
-%     % \item \vspace{-5pt} \textbf{Frameworks}{: React, Node.js, Flask, FastAPI}
-% \end{itemize}
-
 \section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
-    \item \textbf{Programming \& Markup:} Python, R, Julia, Java, Mathematica, MATLAB, \LaTeX, HTML, CSS, SQL
-    \item \vspace{-5pt} \textbf{Python Stack:} PyTorch, NumPy, pandas, Matplotlib, SciPy, scikit-learn, Streamlit
+    \item \textbf{Programming:} Python, R, C++, Julia, Java, Mathematica, MATLAB, \LaTeX, HTML, CSS, SQL, NoSQL
+    \item \vspace{-5pt} \textbf{Python Stack:} PyTorch, scikit-learn, NumPy, pandas, matplotlib, Streamlit
     \item \vspace{-5pt} \textbf{R Stack:} tidyverse, caret, rpart, glmnet, e1071, keras
-    \item \vspace{-5pt} \textbf{Spoken Languages:} English, Hindi-Urdu, Mandarin Chinese, Spanish, Modern Standard Arabic, Panjabi
+    % \item \vspace{-5pt} \textbf{Spoken Languages:} English, Hindi-Urdu, Mandarin Chinese, Spanish, Modern Standard Arabic, Panjabi
 \end{itemize}
-
-
-%-----------CERTIFICATES-----------
-% \section{Certificates}
-% \begin{itemize}[leftmargin=0.15in, label={}]
-%     \resumeItem{\textbf{DataCamp:}{ Data Manipulation in Julia, Intermediate Julia, Introduction to Data Visualization with Julia}}\vspace{-5pt}
-%     \resumeItem{\textbf{Codecademy:}{ Analyze Data with R Skill Path, Learn Java Course}}
-% \end{itemize}
-
-
-%-----------CERTIFICATES-----------
-% \section{Certificates}
-%   \resumeSubHeadingListStart
-
-%     \resumeSubheading
-%       {DataCamp}{}
-%       {Data Manipulation in Julia, Intermediate Julia, Introduction to Data Visualization with Julia}{}
-
-%     \resumeSubheading
-%       {Codecademy}{}
-%       {Analyze Data with R Skill Path, Learn Java Course}{}
-
-%   \resumeSubHeadingListEnd
 
 \end{document}
