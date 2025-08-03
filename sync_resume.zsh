@@ -25,7 +25,15 @@ head=$(git rev-parse HEAD)
 overleaf_has_changes=false
 if [ "$overleaf_head" != "$head" ]; then
     echo "Merging changes from Overleaf..."
-    git merge overleaf/master --no-edit
+    if ! git merge overleaf/master --no-edit; then
+        echo "⚠️ Merge conflict detected. Resolving in favor of Overleaf..."
+        conflicted_files=$(git diff --name-only --diff-filter=U)
+        for file in $conflicted_files; do
+            git checkout --theirs "$file"
+            git add "$file"
+        done
+        git commit -m "resolve: auto-merged in favor of Overleaf"
+    fi
     overleaf_has_changes=true
 else
     echo "✅ Overleaf is already up to date."
