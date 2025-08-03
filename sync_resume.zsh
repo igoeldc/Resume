@@ -31,7 +31,6 @@ if [ "$overleaf_head" != "$head" ]; then
             git checkout --theirs "$file"
             git add "$file"
         done
-        git commit -m "resolve: auto-merged in favor of Overleaf"
     fi
     overleaf_has_changes=true
 else
@@ -56,7 +55,11 @@ if $pdf_changed || $overleaf_has_changes; then
     fi
 
     echo "📝 Committing changes..."
-    git commit -m "$commit_msg"
+    if ! git diff --cached --quiet; then
+        git commit -m "$commit_msg"
+    else
+        echo "✅ Nothing to commit."
+    fi
     echo "🚀 Pushing to GitHub (origin)..."
     git push origin master
     echo "✅ Resume synced and pushed to GitHub."
@@ -64,4 +67,3 @@ else
     echo "✅ No changes to commit. Working directory is clean."
     exit 0
 fi
-
