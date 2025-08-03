@@ -3,14 +3,13 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
-pdf_committed=false
-# --- PDF Check and Commit ---
+# --- PDF Check ---
 echo "🔎 Checking for local PDF changes..."
+pdf_changed=false
 if ! git diff --quiet --exit-code -- Ishaan_Goel_Resume.pdf; then
-  echo "📝 Committing modified PDF to clean working directory..."
+  echo "📄 PDF has changed. Staging..."
   git add Ishaan_Goel_Resume.pdf
-  git commit -m "chore: Temporarily commit PDF"
-  pdf_committed=true
+  pdf_changed=true
 else
   echo "📄 PDF is unchanged."
 fi
@@ -39,40 +38,30 @@ else
     echo "✅ Overleaf is already up to date."
 fi
 
-# --- Consolidate Commits ---
-commits_to_squash=0
-if [ "$pdf_committed" = true ]; then
-    commits_to_squash=$((commits_to_squash + 1))
-fi
-if [ "$overleaf_has_changes" = true ]; then
-    commits_to_squash=$((commits_to_squash + 1))
+# --- Stage final tex ---
+if $overleaf_has_changes; then
+    git add Ishaan_Resume_LaTeX.tex
 fi
 
-if [ "$commits_to_squash" -gt 0 ]; then
-    echo "🧽 Consolidating changes into a single commit..."
-    git reset --soft "HEAD~$commits_to_squash"
+# --- Final Commit ---
+if $pdf_changed || $overleaf_has_changes; then
+    today=$(date +"%m/%d/%y")
+    default_msg="Updated resume $today"
+
+    read "?✏️ Use default commit message: \"$default_msg\"? (Y/n): " use_default
+    if [[ "$use_default" =~ ^[Yy]?$ ]]; then
+        commit_msg="$default_msg"
+    else
+        read "?📝 Enter custom commit message: " commit_msg
+    fi
+
+    echo "📝 Committing changes..."
+    git commit -m "$commit_msg"
+    echo "🚀 Pushing to GitHub (origin)..."
+    git push origin master
+    echo "✅ Resume synced and pushed to GitHub."
 else
     echo "✅ No changes to commit. Working directory is clean."
     exit 0
 fi
 
-# --- Final Commit ---
-today=$(date +"%m/%d/%y")
-default_msg="Updated resume $today"
-
-read "?✏️ Use default commit message: \"$default_msg\"? (Y/n): " use_default
-
-if [[ "$use_default" =~ ^[Yy]?$ ]]; then
-    commit_msg="$default_msg"
-else
-    read "?📝 Enter custom commit message: " commit_msg
-fi
-
-echo "📝 Committing changes..."
-git commit -m "$commit_msg"
-
-# --- Push ---
-echo "🚀 Pushing to GitHub (origin)..."
-git push origin master
-
-echo "✅ Resume synced and pushed to GitHub."
