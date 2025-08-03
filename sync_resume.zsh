@@ -25,12 +25,16 @@ overleaf_has_changes=false
 if [ "$overleaf_head" != "$head" ]; then
     echo "Merging changes from Overleaf..."
     if ! git merge overleaf/master --no-edit; then
-        echo "⚠️ Merge conflict detected. Resolving in favor of Overleaf..."
-        conflicted_files=$(git diff --name-only --diff-filter=U)
-        for file in $conflicted_files; do
-            git checkout --theirs "$file"
-            git add "$file"
-        done
+        echo "⚠️ Merge conflict or local change detected. Resolving in favor of Overleaf..."
+        
+        # Reset your working copy of conflicting files to Overleaf version
+        git checkout --theirs Ishaan_Resume_LaTeX.tex Ishaan_Goel_Resume.pdf 2>/dev/null || true
+
+        # Stage them
+        git add Ishaan_Resume_LaTeX.tex Ishaan_Goel_Resume.pdf
+
+        # No commit here — defer to final commit block
+        echo "✅ Merge resolved in favor of Overleaf — staged for final commit."
     fi
     overleaf_has_changes=true
 else
