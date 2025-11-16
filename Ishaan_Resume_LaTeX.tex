@@ -36,7 +36,7 @@
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot[C]{}
-% \fancyfoot[C]{\makebox[\textwidth]{U.S. Citizen}}
+% \fancyfoot[C]{\makebox[\textwidth]{Do Not Require Visa Sponsorship}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -128,7 +128,7 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeEducationHeading
-      {\href{https://www.iit.edu/}{Illinois Institute of Technology}}{(3.73/4.00)}{Aug 2022 -- Present}
+      {\href{https://www.iit.edu/}{Illinois Institute of Technology}}{(3.7/4.0)}{Aug 2022 -- Present}
       {M.A.S. \href{https://catalog.iit.edu/graduate/colleges/computing/computer-science/master-artificial-intelligence/\#overviewtext}{Artificial Intelligence}}
       {Dual B.S. \href{https://catalog.iit.edu/undergraduate/colleges/computing/applied-mathematics/bs/\#text}{Applied Mathematics} and \href{https://catalog.iit.edu/undergraduate/colleges/computing/computer-science/\#:~:text=The\%20B.S.\%20in\%20Data,be\%20successful\%20data\%20science\%20professionals.}{Data Science}, \href{https://catalog.iit.edu/undergraduate/colleges/business/minor-finance/\#:~:text=business\%20schools\%20worldwide.-,Required\%20Courses,-Course\%20List}{Finance Minor}}
       {Heald and STEM+ Scholarships Recipient}
@@ -138,16 +138,6 @@
 
 %-----------RELEVANT COURSEWORK-----------
 \section{Relevant Coursework}
-% \vspace{-10pt}
-% \begin{table}[h]
-%     \centering
-%     \setlength{\tabcolsep}{7pt}
-%     \begin{tabular}{c|ccccc}
-%         UG & Linear Optimization & Stochastic Processes & Graph Theory & Natural Language Understanding & Data Mining \\
-%         G & Machine Learning & Statistical Learning & SPDEs  & Monte Carlo Methods in Finance & 
-%     \end{tabular}
-% \vspace{-20pt}
-% \end{table}
 \resumeSubHeadingListStart
     \item \textbf{Math}: Probability, Linear Optimization, Stochastic Processes, Graph Theory, Monte Carlo Methods in Finance, \vspace{-5pt}
     \item \qquad\quad\;\! SPDEs, Real Analysis, Abstract Algebra, Combinatorics, Dynamical Systems, Functional Analysis (audit) \vspace{-5pt}
@@ -157,29 +147,29 @@
     \item \textbf{Planned (Spring 2026):} Big Data Technologies, Advanced AI, Quantitative Risk Management, Financial Derivatives \vspace{-5pt}
     % \item \textbf{Other:} Language Theory in NLP, Deep Technology Commercialization \vspace{-5pt}
 \resumeSubHeadingListEnd
-% \resumeSubHeadingListStart
-%     \item Linear Optimization (UG), Stochastic Processes (UG), Graph Theory (UG), Monte Carlo Methods in Finance (G), SPDEs (G) \vspace{-5pt}
-%     \item Machine Learning (G), Statistical Learning (G), Natural Language Understanding (UG), Data Mining (UG) \vspace{-5pt}
-%     % \item \textbf{Other:} Language Theory in NLP, Deep Technology Commercialization \vspace{-5pt}
-%     \item \textbf{Enrolled:} Information Retrieval (UG), Deep Learning (G), Game Theory (G)
-% \resumeSubHeadingListEnd
 \vspace{-5pt}
 
 %-----------EXPERIENCE-----------
-\newcommand{\experienceListStart}{\begin{itemize}[leftmargin=\indentsize, label=]\vspace{-7pt}}
-\newcommand{\experienceListEnd}{\end{itemize}\vspace{-5pt}}
-\newcommand{\experienceSubheading}[4]{
+\newcommand{\experienceSubheading}[2]{
     \item\vspace{-2pt}
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#3} & #4 \\
+      \textbf{#1} & #2
+    \end{tabular*} \vspace{-5pt}
+}
+\newcommand{\experienceSubsubheading}[2]{
+    \item\vspace{-2pt}
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textit{#1} & #2 \\
     \end{tabular*}
 }
 
+\newcommand{\experienceListStart}{\begin{itemize}[leftmargin=\indentsize, label=]\vspace{-7pt}}
+\newcommand{\experienceListEnd}{\end{itemize}\vspace{-5pt}}
+
 \section{Experience}
 \resumeSubHeadingListStart
-
-    \experienceSubheading{Research Assistant under \href{https://cialenco.com}{Dr. Igor Cialenco}, \href{https://www.nsf.gov/awardsearch/showAward?AWD\_ID=2407549\&HistoricalAwards=false}{NSF-funded research}}{Aug 2024 -- Present}{\href{https://www.iit.edu/applied-math}{Illinois Institute of Technology, Department of Applied Mathematics}}{Chicago, IL}
+    \experienceSubheading{\href{https://www.iit.edu/applied-math}{Illinois Institute of Technology, Department of Applied Mathematics}}{Chicago, IL}
+    \experienceSubsubheading{Research Assistant under \href{https://cialenco.com}{Dr. Igor Cialenco}, \href{https://www.nsf.gov/awardsearch/showAward?AWD\_ID=2407549\&HistoricalAwards=false}{NSF-funded research}}{Aug 2024 -- Present}
         \experienceListStart
             % \resumeItem{Developing a stochastic mathematical framework for sustainable groundwater management under California's SGMA.}
             \resumeItem{Applying concepts from RL, stochastic (optimal) control, and game theory
@@ -189,20 +179,24 @@
             % \resumeItem{Designing computational algorithms for multi-stakeholder equilibrium analysis by integrating mathematical theory with hydrological and economic data.}
         \experienceListEnd
 
-    \experienceSubheading{Research Assistant under Dr. Michael Pelsmajer}{May 2025 -- Present}{}{\vspace{-12pt}}
+    \experienceSubsubheading{Research Assistant under Dr. Michael Pelsmajer}{May 2025 -- Present}
         \experienceListStart
             \resumeItem{Making a Markov Chain sampler in Python to generate uniform random hypergraphs with the same $k$-core sequences.}
         \experienceListEnd
 
     % Combine internships
-    \experienceSubheading{Intern}{Jun 2025 -- Jul 2025}{\href{https://www.peoplestrong.com/about-us/}{PeopleStrong Technologies Ltd.}}{Gurugram, India}
+    \experienceSubheading{\href{https://www.peoplestrong.com/about-us/}{PeopleStrong Technologies Ltd.}}{Gurugram, India}
+    \experienceSubsubheading{Intern}{Jun 2025 -- Jul 2025}
         \experienceListStart
             \resumeItem{Built a scalable RAG-based system for Automated Ticket Resolution, enabling document-grounded Q\&A for 1,000+ employees and reducing index testing time by over 200x (weeks to hours). Gained hands-on experience in deploying production-ready agentic AI systems and accelerating iteration cycles through automation and containerization.}
         \experienceListEnd
 
-    \experienceSubheading{Intern}{Jul 2024 -- Jul 2024}{}{\vspace{-12pt}}
+    \experienceSubsubheading{Intern}{Jul 2024 -- Jul 2024}
         \experienceListStart
-            \resumeItem{Designed and deployed a scalable LLM-based chatbot with an agentic architecture integrating 5+ RAG systems, validated via A/B testing and approved for company-wide rollout.}
+            \resumeItem{Designed and deployed a scalable LLM-based chatbot with an agentic architecture integrating 5 RAG systems\!\!
+            , validated via A/B testing and approved for company-wide rollout\!\!
+            .
+            }
         \experienceListEnd
 
     % \experienceSubheading{Research Assistant}{Jan 2024 -- Jun 2024}{\href{https://www.iit.edu/computing}{Illinois Institute of Technology, College of Computing}}{Chicago, IL}
@@ -218,8 +212,8 @@
 \begin{itemize}[leftmargin=0.15in, label=]
     \item \textbf{Programming:} Python, R, Julia, C++, Java, \LaTeX, HTML, CSS, SQL, Mathematica, MATLAB
     \item \vspace{-5pt} \textbf{Python Stack:} PyTorch, scikit-learn, NumPy, pandas, matplotlib, NetworkX, PySpark
-    \item \vspace{-5pt} \textbf{R Stack:} tidyverse, caret, rpart, glmnet, e1071, keras
-    \item \vspace{-5pt} \textbf{Spoken Languages:} English, Hindi, Urdu, Mandarin Chinese, Spanish, Modern Standard Arabic, Punjabi
+    \item \vspace{-5pt} \textbf{R Stack:} tidyverse, data.table, glmnet, boot, gam, keras, caret, e1071, rpart, foreach, dbscan, pROC, Matrix, pls, class
+    \item \vspace{-5pt} \textbf{Spoken Languages:} English, Hindi, Urdu, Mandarin Chinese, Spanish, Punjabi, Modern Standard Arabic
     \item \vspace{-5pt} \textbf{Others}: Generative AI, Mathematical Finance, Operations Research, Stochastic Modeling, Discrete Mathematics
 \end{itemize}
 \vspace{\vspacesize}
@@ -234,17 +228,23 @@
 \newcommand{\resumeProjectListStart}{\begin{itemize}[leftmargin=\indentsize, label=]\vspace{-7pt}}
 \newcommand{\resumeProjectListEnd}{\end{itemize}\vspace{-5pt}}
 
-\section{Projects} % Replace with Grainger or IR
-% \resumeSubHeadingListStart
-%     \resumeProjectHeading{\href{https://github.com/igoeldc/AI-Language-Understanding-Projects}{\textbf{Natural Language Understanding Projects}} $|$ \emph{NLP, Python}}{Aug 2024 -- Dec 2024}
-%         \resumeProjectListStart
-%             \resumeItem{Implemented foundational NLP models from scratch: a probabilistic language model, Naive Bayes, and $k$NN.}
-%         \resumeProjectListEnd
+\section{Projects} % IR
 \resumeSubHeadingListStart
+    \resumeProjectHeading{\textbf{Full-Stack Information Retrieval Engine} $|$ \emph{IR, scikit-learn, Flask, Scrapy, Python}}{Oct 2025 -- Dec 2025}
+        \resumeProjectListStart
+            \resumeItem{Developing a full-stack information retrieval engine featuring a Scrapy crawler with configurable depth and AutoThrottle, a TF–IDF inverted index with cosine similarity and optional semantic $k$NN search (word2vec, FAISS), and a Flask-based query processor with Top-K ranking, NLTK spell correction, WordNet expansion, and CSV export.}
+        \resumeProjectListEnd
+
+    \resumeProjectHeading{\textbf{Distributed RL for Ocean Plastic Drift Simulation} $|$ \emph{RL, PyTorch, JAX, Python}}{Aug 2025 -- Nov 2025}
+        \resumeProjectListStart
+            \resumeItem{Developed a distributed Monte Carlo RL framework that simulates ocean plastic drift and aggregates results from volunteer clients for large-scale model optimization, earning 3rd place in the Grainger Computing Innovation Prize.}
+        \resumeProjectListEnd
+    
     \resumeProjectHeading{\href{https://github.com/igoeldc/AI-Language-Understanding-Projects}{\textbf{Natural Language Understanding Projects}} $|$ \emph{NLP, Python}}{Aug 2024 -- Dec 2024}
         \resumeProjectListStart
             \resumeItem{Implemented foundational NLP models from scratch: a probabilistic language model, Naive Bayes, and $k$NN.}
         \resumeProjectListEnd
+    
     % \resumeProjectHeading{\href{https://github.com/jacobhthomas/CollabGraph}{\textbf{Erd\H{o}s Co-authorship Network}} $|$ \emph{Graph Theory, Python, NetworkX}}{Feb 2023 -- May 2023}
     %     \resumeProjectListStart
     %         \resumeItem{Analyzed a 500+ node co-authorship network, applying centrality measures to identify key researchers and reveal collaborative patterns.}
@@ -253,30 +253,30 @@
 \vspace{\vspacesize}
 
 %-----------LEADERSHIP ROLES-----------
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \normalsize
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      #1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-\newcommand{\resumeLeadershipListStart}{\begin{itemize}[leftmargin=\indentsize, label=]}
-\newcommand{\resumeLeadershipListEnd}{\end{itemize}\vspace{-5pt}}
+% \newcommand{\resumeSubSubheading}[2]{
+%     \item
+%     \normalsize
+%     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+%       #1 & #2 \\
+%     \end{tabular*}\vspace{-7pt}
+% }
+% \newcommand{\resumeLeadershipListStart}{\begin{itemize}[leftmargin=\indentsize, label=]}
+% \newcommand{\resumeLeadershipListEnd}{\end{itemize}\vspace{-5pt}}
 
-\section{Leadership Roles}
-\resumeSubHeadingListStart
+% \section{Leadership Roles}
+% \resumeSubHeadingListStart
 
-    \resumeSubSubheading{\textbf{President}, Machine Learning at Illinois Institute of Technology (ML@IIT)}{Jan 2023 -- Present}
-        \resumeLeadershipListStart
-            \resumeItem{Scaled organization from small group to 250+ active participants, hosting workshops and speaker events on AI/ML.}
-        \resumeLeadershipListEnd
+%     \resumeSubSubheading{\textbf{President}, Machine Learning at Illinois Institute of Technology (ML@IIT)}{Jan 2023 -- Present}
+%         \resumeLeadershipListStart
+%             \resumeItem{Scaled organization from small group to 250+ active participants, hosting workshops and speaker events on AI/ML.}
+%         \resumeLeadershipListEnd
     
-    \resumeSubSubheading{\textbf{Vice President}, Society for Industrial and Applied Mathematics (SIAM) Chapter at IIT}{Dec 2022 -- Present}
-        \resumeLeadershipListStart
-            \resumeItem{Spearheaded initiatives connecting students to research opportunities in applied mathematics by hosting professor talks and organizing networking events for students across multiple disciplines related to mathematics.}
-        \resumeLeadershipListEnd
+%     \resumeSubSubheading{\textbf{Vice President}, Society for Industrial and Applied Mathematics (SIAM) Chapter at IIT}{Dec 2022 -- Present}
+%         \resumeLeadershipListStart
+%             \resumeItem{Spearheaded initiatives connecting students to research opportunities in applied mathematics by hosting professor talks and organizing networking events for students across multiple disciplines related to mathematics.}
+%         \resumeLeadershipListEnd
         
-\resumeSubHeadingListEnd
-\vspace{\vspacesize}
+% \resumeSubHeadingListEnd
+% \vspace{\vspacesize}
 
 \end{document}
