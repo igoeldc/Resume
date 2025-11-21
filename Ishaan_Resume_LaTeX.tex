@@ -115,13 +115,14 @@
 \vspace{\vspacesize}
 
 %-----------EDUCATION-----------
-\newcommand{\resumeEducationHeading}[6]{
+\newcommand{\resumeEducationHeading}[7]{
   \item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} {#2} & #3 \\
       \hspace{\indentsize} #4 \\
       \hspace{\indentsize} #5 \\
-      \hspace{20pt} \textit{#6} \\
+      \hspace{20pt} #6 \\
+      \hspace{40pt} \textit{#7} \\
     \end{tabular*}
 }
 
@@ -131,6 +132,7 @@
       {\href{https://www.iit.edu/}{Illinois Institute of Technology}}{(3.7/4.0)}{Aug 2022 -- Present}
       {M.A.S. \href{https://catalog.iit.edu/graduate/colleges/computing/computer-science/master-artificial-intelligence/\#overviewtext}{Artificial Intelligence}}
       {Dual B.S. \href{https://catalog.iit.edu/undergraduate/colleges/computing/applied-mathematics/bs/\#text}{Applied Mathematics} and \href{https://catalog.iit.edu/undergraduate/colleges/computing/computer-science/\#:~:text=The\%20B.S.\%20in\%20Data,be\%20successful\%20data\%20science\%20professionals.}{Data Science}, \href{https://catalog.iit.edu/undergraduate/colleges/business/minor-finance/\#:~:text=business\%20schools\%20worldwide.-,Required\%20Courses,-Course\%20List}{Finance Minor}}
+      {Specializations in Discrete Math, Stochastics, Mathematical Finance}
       {Heald and STEM+ Scholarships Recipient}
   \resumeSubHeadingListEnd
   
@@ -228,22 +230,27 @@
 \newcommand{\resumeProjectListStart}{\begin{itemize}[leftmargin=\indentsize, label=]\vspace{-7pt}}
 \newcommand{\resumeProjectListEnd}{\end{itemize}\vspace{-5pt}}
 
-\section{Projects} % IR
+\section{Projects}
 \resumeSubHeadingListStart
-    \resumeProjectHeading{\textbf{Full-Stack Information Retrieval Engine} $|$ \emph{IR, scikit-learn, Flask, Scrapy, Python}}{Oct 2025 -- Dec 2025}
+    \resumeProjectHeading{\textbf{Full-Stack Information Retrieval Engine} $|$ \emph{IR, scikit-learn, Flask, Scrapy, Python}}{Oct 2025 -- Present}
         \resumeProjectListStart
             \resumeItem{Developing a full-stack information retrieval engine featuring a Scrapy crawler with configurable depth and AutoThrottle, a TF–IDF inverted index with cosine similarity and optional semantic $k$NN search (word2vec, FAISS), and a Flask-based query processor with Top-K ranking, NLTK spell correction, WordNet expansion, and CSV export.}
         \resumeProjectListEnd
 
-    \resumeProjectHeading{\textbf{Distributed RL for Ocean Plastic Drift Simulation} $|$ \emph{RL, PyTorch, JAX, Python}}{Aug 2025 -- Nov 2025}
+    \resumeProjectHeading{\href{https://pypi.org/project/mathcode/}{\textbf{mathcode}} $|$ \emph{PyPi, Python, NumPy, NetworkX}}{Jun 2025 -- Present}
+        \resumeProjectListStart
+            \resumeItem{Actively developing a Python library implementing mathematical algorithms from coursework: graph algorithms, stochastic processes (Brownian motion, Markov chains, SDEs/SPDEs), optimization (gradient descent variants, simplex), abstract algebra, and reinforcement learning (value/policy iteration, Monte Carlo methods).}
+        \resumeProjectListEnd
+
+    \resumeProjectHeading{\textbf{Distributed RL for Plastic Drift Simulation} $|$ \emph{RL, PyTorch, JAX, Python}}{Aug 2025 -- Nov 2025}
         \resumeProjectListStart
             \resumeItem{Developed a distributed Monte Carlo RL framework that simulates ocean plastic drift and aggregates results from volunteer clients for large-scale model optimization, earning 3rd place in the Grainger Computing Innovation Prize.}
         \resumeProjectListEnd
     
-    \resumeProjectHeading{\href{https://github.com/igoeldc/AI-Language-Understanding-Projects}{\textbf{Natural Language Understanding Projects}} $|$ \emph{NLP, Python}}{Aug 2024 -- Dec 2024}
-        \resumeProjectListStart
-            \resumeItem{Implemented foundational NLP models from scratch: a probabilistic language model, Naive Bayes, and $k$NN.}
-        \resumeProjectListEnd
+    % \resumeProjectHeading{\href{https://github.com/igoeldc/AI-Language-Understanding-Projects}{\textbf{Natural Language Understanding Projects}} $|$ \emph{NLP, Python}}{Aug 2024 -- Dec 2024}
+    %     \resumeProjectListStart
+    %         \resumeItem{Implemented foundational NLP models from scratch: a probabilistic language model, Naive Bayes, and $k$NN.}
+    %     \resumeProjectListEnd
     
     % \resumeProjectHeading{\href{https://github.com/jacobhthomas/CollabGraph}{\textbf{Erd\H{o}s Co-authorship Network}} $|$ \emph{Graph Theory, Python, NetworkX}}{Feb 2023 -- May 2023}
     %     \resumeProjectListStart
